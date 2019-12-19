@@ -1,0 +1,115 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-beerpenalty-bp-153203-authRole",
+			"UnauthRoleArn": "arn:aws:iam::576850168598:role/amplify-beerpenalty-bp-153203-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::576850168598:role/amplify-beerpenalty-bp-153203-authRole",
+			"Region": "eu-central-1",
+			"DeploymentBucketName": "amplify-beerpenalty-bp-153203-deployment",
+			"UnauthRoleName": "amplify-beerpenalty-bp-153203-unauthRole",
+			"StackName": "amplify-beerpenalty-bp-153203",
+			"StackId": "arn:aws:cloudformation:eu-central-1:576850168598:stack/amplify-beerpenalty-bp-153203/ff6e9250-20d9-11ea-9a6d-023cc2de05b4",
+			"AmplifyAppId": "d4o5cnewfdp5n"
+		}
+	},
+	"auth": {
+		"beerpenaltyc78cb28b": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-beerpenalty-bp-153203-deployment/amplify-cfn-templates/auth/beerpenaltyc78cb28b-cloudformation-template.yml",
+				"logicalId": "authbeerpenaltyc78cb28b"
+			},
+			"lastPushTimeStamp": "2019-12-19T09:44:43.310Z",
+			"output": {
+				"AppClientSecret": "1j9p1rb3tsi3rhom0s0vvf4scbvdjjhkrg7hmj5bthmj51u6123r",
+				"UserPoolId": "eu-central-1_juUrQc5CR",
+				"AppClientIDWeb": "6cpuesl2hads0ftov4jsc0l1a9",
+				"AppClientID": "bjh30urmi38bb964ifoe34bog",
+				"IdentityPoolId": "eu-central-1:38b1bdf2-319c-4b67-9a3c-819fba667a69",
+				"IdentityPoolName": "beerpenaltyc78cb28b_identitypool_c78cb28b__bp",
+				"UserPoolName": "beerpenaltyc78cb28b_userpool_c78cb28b"
+			},
+			"lastPushDirHash": "+c8E5+gWrhwrgUpVbigvX5gH5DA="
+		}
+	},
+	"api": {
+		"beerpenalty": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authbeerpenaltyc78cb28b"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "yehfw33p3bhofbyhowlbedws6e",
+				"GraphQLAPIEndpointOutput": "https://rcbefik57ncrdoayj7hmwlm7va.appsync-api.eu-central-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-beerpenalty-bp-153203-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apibeerpenalty"
+			},
+			"lastPushTimeStamp": "2019-12-19T09:44:43.312Z",
+			"lastPushDirHash": "in4kycbSFJPVOXCf8r43GoRItso="
+		},
+		"beerpenalty-bp": {
+			"service": "AppSync",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS"
+					},
+					"additionalAuthenticationProviders": null,
+					"userPoolConfig": {
+						"userPoolId": "eu-central-1_juUrQc5CR",
+						"awsRegion": "eu-central-1",
+						"defaultAction": "ALLOW",
+						"appIdClientRegex": null
+					}
+				},
+				"GraphQLAPIIdOutput": "yehfw33p3bhofbyhowlbedws6e",
+				"GraphQLAPIEndpointOutput": "https://rcbefik57ncrdoayj7hmwlm7va.appsync-api.eu-central-1.amazonaws.com/graphql",
+				"name": "beerpenalty-bp",
+				"region": "eu-central-1"
+			},
+			"lastPushTimeStamp": "2019-12-17T15:42:51.395Z"
+		}
+	},
+	"function": {
+		"addBeer": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "beerpenaltyc78cb28b",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-12-18T16:35:16.466Z",
+			"lastPackageTimeStamp": "2019-12-19T09:43:40.853Z",
+			"distZipFilename": "addBeer-314b4c376d4938656f4a-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-beerpenalty-bp-153203-deployment/amplify-cfn-templates/function/addBeer-cloudformation-template.json",
+				"logicalId": "functionaddBeer"
+			},
+			"lastPushTimeStamp": "2019-12-19T09:44:43.315Z",
+			"output": {
+				"Region": "eu-central-1",
+				"Arn": "arn:aws:lambda:eu-central-1:576850168598:function:addBeer-bp",
+				"Name": "addBeer-bp",
+				"LambdaExecutionRole": "beerpenaltyLambdaRolecc38edf4-bp"
+			},
+			"lastPushDirHash": "jrtNvSbWN+Gmok/derOv1zApTZM="
+		}
+	}
+}

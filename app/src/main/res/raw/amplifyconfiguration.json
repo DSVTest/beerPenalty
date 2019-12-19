@@ -1,0 +1,28 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "beerpenalty": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://rcbefik57ncrdoayj7hmwlm7va.appsync-api.eu-central-1.amazonaws.com/graphql",
+                    "region": "eu-central-1",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+                },
+                "beerpenalty-bp": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://rcbefik57ncrdoayj7hmwlm7va.appsync-api.eu-central-1.amazonaws.com/graphql",
+                    "region": "eu-central-1",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+                },
+                "beerLambda": {
+                    "endpointType": "REST",
+                    "endpoint": "https://fsiingop4d.execute-api.eu-central-1.amazonaws.com/bp",
+                    "region": "eu-central-1",
+                    "authorizationType": "AWS_IAM"
+                }
+            }
+        }
+    }
+}
