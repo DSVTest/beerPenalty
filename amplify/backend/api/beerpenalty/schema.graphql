@@ -1,0 +1,5 @@
+type Penalty @model {
+  id: ID!
+  name: String!
+  beers: Int
+}

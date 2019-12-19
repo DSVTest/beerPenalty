@@ -1,0 +1,20 @@
+{
+    "bp": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-beerpenalty-bp-153203-authRole",
+            "UnauthRoleArn": "arn:aws:iam::576850168598:role/amplify-beerpenalty-bp-153203-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::576850168598:role/amplify-beerpenalty-bp-153203-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-beerpenalty-bp-153203-deployment",
+            "UnauthRoleName": "amplify-beerpenalty-bp-153203-unauthRole",
+            "StackName": "amplify-beerpenalty-bp-153203",
+            "StackId": "arn:aws:cloudformation:eu-central-1:576850168598:stack/amplify-beerpenalty-bp-153203/ff6e9250-20d9-11ea-9a6d-023cc2de05b4",
+            "AmplifyAppId": "d4o5cnewfdp5n"
+        },
+        "categories": {
+            "auth": {
+                "beerpenaltyc78cb28b": {}
+            }
+        }
+    }
+}

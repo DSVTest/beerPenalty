@@ -1,0 +1,31 @@
+# this is an auto generated file. This will be overwritten
+mutation CreatePenalty(
+  $input: CreatePenaltyInput!
+  $condition: ModelPenaltyConditionInput
+) {
+  createPenalty(input: $input, condition: $condition) {
+    id
+    name
+    beers
+  }
+}
+mutation UpdatePenalty(
+  $input: UpdatePenaltyInput!
+  $condition: ModelPenaltyConditionInput
+) {
+  updatePenalty(input: $input, condition: $condition) {
+    id
+    name
+    beers
+  }
+}
+mutation DeletePenalty(
+  $input: DeletePenaltyInput!
+  $condition: ModelPenaltyConditionInput
+) {
+  deletePenalty(input: $input, condition: $condition) {
+    id
+    name
+    beers
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "permissions": {
+        "auth": {
+            "beerpenaltyc78cb28b": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        "api": {
+            "beerpenalty-bp": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+	"auth": {
+		"beerpenaltyc78cb28b": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"beerpenalty": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authbeerpenaltyc78cb28b"
+						}
+					}
+				}
+			}
+		}
+	},
+	"function": {
+		"addBeer": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "beerpenaltyc78cb28b",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
+		}
+	}
+}
