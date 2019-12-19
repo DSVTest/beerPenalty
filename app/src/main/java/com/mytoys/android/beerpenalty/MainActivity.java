@@ -1,5 +1,6 @@
 package com.mytoys.android.beerpenalty;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 .enqueue(queryCallback);
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void beerAdd(String name) {
         CognitoCachingCredentialsProvider cognitoProvider = new CognitoCachingCredentialsProvider(
                 this.getApplicationContext(), "eu-central-1:38b1bdf2-319c-4b67-9a3c-819fba667a69", Regions.EU_CENTRAL_1);
